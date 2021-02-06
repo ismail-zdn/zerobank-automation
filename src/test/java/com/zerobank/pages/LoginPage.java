@@ -15,9 +15,6 @@ public class LoginPage extends BasePage{
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy(css = "[id='signin_button']")
-    public WebElement HomePageSignInButton;
-
     @FindBy(css="[id='user_login']")
     public WebElement userNameInputBox;
 
