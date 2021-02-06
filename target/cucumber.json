@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-02-05T22:20:33.242Z",
+        "line": 3,
+        "name": "login as a user",
+        "description": "",
+        "id": "user-should-be-able-to-login;login-as-a-user",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3269621700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user is on the login page",
+            "match": {
+              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_is_on_the_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2365670100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user enters valid credentials",
+            "match": {
+              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_enters_valid_credentials()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 22002700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user should be able to login",
+            "match": {
+              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_should_be_able_to_login()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login"
+          }
+        ]
+      }
+    ],
+    "name": "User should be able to login",
+    "description": "",
+    "id": "user-should-be-able-to-login",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/login.feature",
+    "tags": [
+      {
+        "name": "@login",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
