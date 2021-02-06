@@ -3,11 +3,32 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-02-06T10:03:11.046Z",
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3105362900,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user logged in",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_logged_in()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-02-06T11:05:25.159Z",
         "before": [
           {
             "result": {
-              "duration": 3164596000,
+              "duration": 2242308200,
               "status": "passed"
             },
             "match": {
@@ -15,14 +36,14 @@
             }
           }
         ],
-        "line": 3,
-        "name": "login as a user",
+        "line": 6,
+        "name": "Savings account redirect",
         "description": "",
-        "id": "user-should-be-able-to-login;login-as-a-user",
+        "id": "navigation-to-specific-accounts-in-accounts-activity;savings-account-redirect",
         "after": [
           {
             "result": {
-              "duration": 649931900,
+              "duration": 661326200,
               "status": "passed"
             },
             "match": {
@@ -35,56 +56,59 @@
         "steps": [
           {
             "result": {
-              "duration": 947783400,
+              "duration": 667867100,
               "status": "passed"
             },
-            "line": 4,
-            "name": "the user is on the login page",
+            "line": 7,
+            "name": "the user clicks on Savings link on the Account Summary page",
             "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_is_on_the_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2197654100,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "the user enters valid credentials",
-            "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_enters_valid_credentials()"
+              "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_clicks_on_Savings_link_on_the_Account_Summary_page()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 12998600,
+              "duration": 51664400,
               "status": "passed"
             },
-            "line": 6,
-            "name": "the user should be able to login",
+            "line": 8,
+            "name": "the Account Activity page should be displayed",
             "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_should_be_able_to_login()"
+              "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_Account_Activity_page_should_be_displayed()"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 107011600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Account drop down should have Savings selected",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.account_drop_down_should_have_Savings_selected()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@login"
+            "name": "@AccountActivityNavigation"
+          },
+          {
+            "name": "@wip"
           }
         ]
       }
     ],
-    "name": "User should be able to login",
+    "name": "Navigation to specific accounts in Accounts Activity",
     "description": "",
-    "id": "user-should-be-able-to-login",
+    "id": "navigation-to-specific-accounts-in-accounts-activity",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/login.feature",
+    "uri": "file:src/test/resources/features/AccountActivityNavigation.feature",
     "tags": [
       {
-        "name": "@login",
+        "name": "@AccountActivityNavigation",
         "type": "Tag",
         "location": {
           "line": 1,
