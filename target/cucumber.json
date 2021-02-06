@@ -3,27 +3,33 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-02-06T10:03:11.046Z",
+        "line": 3,
+        "name": "the user logged in",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2021-02-06T10:22:56.010Z",
         "before": [
           {
             "result": {
-              "duration": 3164596000,
-              "status": "passed"
+              "status": "skipped"
             },
             "match": {
               "location": "com.zerobank.step_definitions.Hooks.setUp()"
             }
           }
         ],
-        "line": 3,
-        "name": "login as a user",
+        "line": 5,
+        "name": "Savings account redirect",
         "description": "",
-        "id": "user-should-be-able-to-login;login-as-a-user",
+        "id": "navigation-to-specific-accounts-in-accounts-activity;savings-account-redirect",
         "after": [
           {
             "result": {
-              "duration": 649931900,
-              "status": "passed"
+              "status": "skipped"
             },
             "match": {
               "location": "com.zerobank.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
@@ -35,56 +41,50 @@
         "steps": [
           {
             "result": {
-              "duration": 947783400,
-              "status": "passed"
+              "status": "undefined"
             },
-            "line": 4,
-            "name": "the user is on the login page",
-            "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_is_on_the_login_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 2197654100,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "the user enters valid credentials",
-            "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_enters_valid_credentials()"
-            },
+            "line": 6,
+            "name": "the user clicks on Savings link on the Account Summary page",
+            "match": {},
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 12998600,
-              "status": "passed"
+              "status": "undefined"
             },
-            "line": 6,
-            "name": "the user should be able to login",
-            "match": {
-              "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_should_be_able_to_login()"
-            },
+            "line": 7,
+            "name": "the Account Activity page should be displayed",
+            "match": {},
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 8,
+            "name": "Account drop down should have Savings selected",
+            "match": {},
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@login"
+            "name": "@AccountActivityNavigation"
+          },
+          {
+            "name": "@wip"
           }
         ]
       }
     ],
-    "name": "User should be able to login",
+    "name": "Navigation to specific accounts in Accounts Activity",
     "description": "",
-    "id": "user-should-be-able-to-login",
+    "id": "navigation-to-specific-accounts-in-accounts-activity",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/login.feature",
+    "uri": "file:src/test/resources/features/AccountActivityNavigation.feature",
     "tags": [
       {
-        "name": "@login",
+        "name": "@AccountActivityNavigation",
         "type": "Tag",
         "location": {
           "line": 1,
