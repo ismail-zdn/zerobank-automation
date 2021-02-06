@@ -19,6 +19,9 @@ formatter.scenario({
     }
   ]
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "the user is on the login page",
   "keyword": "Given "
@@ -47,6 +50,9 @@ formatter.match({
   "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_should_be_able_to_login()"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 });

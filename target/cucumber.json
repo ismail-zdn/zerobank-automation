@@ -3,17 +3,39 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-02-05T22:20:33.242Z",
+        "start_timestamp": "2021-02-06T10:03:11.046Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3164596000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.zerobank.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
         "line": 3,
         "name": "login as a user",
         "description": "",
         "id": "user-should-be-able-to-login;login-as-a-user",
+        "after": [
+          {
+            "result": {
+              "duration": 649931900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.zerobank.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 3269621700,
+              "duration": 947783400,
               "status": "passed"
             },
             "line": 4,
@@ -25,7 +47,7 @@
           },
           {
             "result": {
-              "duration": 2365670100,
+              "duration": 2197654100,
               "status": "passed"
             },
             "line": 5,
@@ -37,7 +59,7 @@
           },
           {
             "result": {
-              "duration": 22002700,
+              "duration": 12998600,
               "status": "passed"
             },
             "line": 6,
