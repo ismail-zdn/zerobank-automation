@@ -3,15 +3,14 @@ package com.zerobank.step_definitions;
 import com.zerobank.pages.AccountActivityPage;
 import com.zerobank.pages.AccountSummaryPage;
 import com.zerobank.pages.LoginPage;
-import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.WebElement;
+
 
 public class AccountActivityNavigationDefs {
 
@@ -21,11 +20,17 @@ public class AccountActivityNavigationDefs {
         new LoginPage().login();
     }
 
-    @When("the user clicks on Savings link on the Account Summary page")
-    public void the_user_clicks_on_Savings_link_on_the_Account_Summary_page() {
-       // AccountSummaryPage accountSummaryPage = new AccountSummaryPage();
-      //  BrowserUtils.waitForClickablility(accountSummaryPage.savingsLink,3);
-        new AccountSummaryPage().savingsLink.click();
+    @When("the user clicks on {string} link on the Account Summary page")
+    public void the_user_clicks_on_link_on_the_Account_Summary_page(String tab) {
+        AccountSummaryPage accountSummaryPage = new AccountSummaryPage();
+
+        for (WebElement webElement : accountSummaryPage.webElementLinkList) {
+
+                if (webElement.getText().equals(tab)){
+                    webElement.click();
+                    break;
+                }
+        }
     }
 
     @Then("the Account Activity page should be displayed")
@@ -33,10 +38,10 @@ public class AccountActivityNavigationDefs {
         Assert.assertEquals("Account Activity",new AccountActivityPage().getPageTabText());
     }
 
-    @Then("Account drop down should have Savings selected")
-    public void account_drop_down_should_have_Savings_selected() {
-        AccountActivityPage accountActivityPage = new AccountActivityPage();
-        Select stateDropDown = new Select(accountActivityPage.accountDropDown);
-        Assert.assertEquals("Savings",stateDropDown.getFirstSelectedOption().getText());
+    @Then("Account drop down should have {string} selected")
+    public void account_drop_down_should_have_selected(String option) {
+        Assert.assertEquals(option,new AccountActivityPage().getSelectDropDown().getFirstSelectedOption().getText());
     }
+
+
 }
