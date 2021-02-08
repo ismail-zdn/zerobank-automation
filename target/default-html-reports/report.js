@@ -1,312 +1,96 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/AccountActivityNavigation.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/FindTransactions.feature");
 formatter.feature({
-  "name": "Navigation to specific accounts in Accounts Activity",
+  "name": "Find Transactions in Account Activity",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@AccountActivityNavigation"
+      "name": "@FindTransactions"
     }
   ]
 });
-formatter.background({
-  "name": "",
+formatter.scenario({
+  "name": "Search date range",
   "description": "",
-  "keyword": "Background"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@FindTransactions"
+    },
+    {
+      "name": "@wip"
+    }
+  ]
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user logged in",
+  "name": "the user accesses the Find Transactions tab",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_logged_in()"
+  "location": "com.zerobank.step_definitions.FindTransactionsDefs.the_user_accesses_the_Find_Transactions_tab()"
 });
 formatter.result({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "Savings account redirect",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@AccountActivityNavigation"
-    }
-  ]
-});
 formatter.step({
-  "name": "the user clicks on \"Savings\" link on the Account Summary page",
+  "name": "the user enters date range from \"2012-09-01\" to \"2012-09-06\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_clicks_on_link_on_the_Account_Summary_page(java.lang.String)"
+  "location": "com.zerobank.step_definitions.FindTransactionsDefs.the_user_enters_date_range_from_to(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the Account Activity page should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_Account_Activity_page_should_be_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Account drop down should have \"Savings\" selected",
+  "name": "clicks Find",
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.account_drop_down_should_have_selected(java.lang.String)"
+  "location": "com.zerobank.step_definitions.FindTransactionsDefs.clicks_Find()"
 });
 formatter.result({
   "status": "passed"
 });
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
 formatter.step({
-  "name": "the user logged in",
-  "keyword": "Given "
+  "name": "results table should only show transactions dates between \"2012-09-01\" to \"2012-09-06\"",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_logged_in()"
+  "location": "com.zerobank.step_definitions.FindTransactionsDefs.results_table_should_only_show_transactions_dates_between_to(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "Brokerage account redirect",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@AccountActivityNavigation"
-    }
-  ]
+formatter.step({
+  "name": "the results should be sorted by most recent date",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.FindTransactionsDefs.the_results_should_be_sorted_by_most_recent_date()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "name": "the user clicks on \"Brokerage\" link on the Account Summary page",
+  "name": "the user enters date range from \"2012-09-02\" to \"2012-09-06\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_clicks_on_link_on_the_Account_Summary_page(java.lang.String)"
+  "location": "com.zerobank.step_definitions.FindTransactionsDefs.the_user_enters_date_range_from_to(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the Account Activity page should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_Account_Activity_page_should_be_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Account drop down should have \"Brokerage\" selected",
+  "name": "clicks Find",
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.account_drop_down_should_have_selected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user logged in",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_logged_in()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Checking account redirect",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@AccountActivityNavigation"
-    }
-  ]
-});
-formatter.step({
-  "name": "the user clicks on \"Checking\" link on the Account Summary page",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_clicks_on_link_on_the_Account_Summary_page(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the Account Activity page should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_Account_Activity_page_should_be_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Account drop down should have \"Checking\" selected",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.account_drop_down_should_have_selected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user logged in",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_logged_in()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Credit Card account redirect",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@AccountActivityNavigation"
-    }
-  ]
-});
-formatter.step({
-  "name": "the user clicks on \"Credit Card\" link on the Account Summary page",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_clicks_on_link_on_the_Account_Summary_page(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the Account Activity page should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_Account_Activity_page_should_be_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Account drop down should have \"Credit Card\" selected",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.account_drop_down_should_have_selected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user logged in",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_logged_in()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Loan\taccount\tredirect",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@AccountActivityNavigation"
-    }
-  ]
-});
-formatter.step({
-  "name": "the user clicks on \"Loan\" link on the Account Summary page",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_user_clicks_on_link_on_the_Account_Summary_page(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the Account Activity page should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.the_Account_Activity_page_should_be_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Account drop down should have \"Loan\" selected",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.AccountActivityNavigationDefs.account_drop_down_should_have_selected(java.lang.String)"
+  "location": "com.zerobank.step_definitions.FindTransactionsDefs.clicks_Find()"
 });
 formatter.result({
   "status": "passed"

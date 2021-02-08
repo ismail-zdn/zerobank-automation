@@ -3,9 +3,16 @@ package com.zerobank.pages;
 import com.zerobank.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public abstract class BasePage {
+
+    public BasePage() {
+        PageFactory.initElements(Driver.get(), this);
+    }
 
     @FindBy(xpath = "(//*[@data-toggle='dropdown'])[2]")
     public WebElement userName;
@@ -13,9 +20,8 @@ public abstract class BasePage {
     @FindBy(css = "[id='account_activity_tab']")
     public WebElement accountActivityTab;
 
-    public BasePage() {
-        PageFactory.initElements(Driver.get(), this);
-    }
+    @FindBy(css = "a[href^='/bank/redirect.html?url']")
+    public List<WebElement> webElementTabList;
 
     public String getPageTitle(){
         return Driver.get().getTitle();
@@ -23,6 +29,15 @@ public abstract class BasePage {
 
     public String getPageTabText(){
         return accountActivityTab.getText();
+    }
+
+    public void accessTab(String tab){
+        for (WebElement webElement : webElementTabList) {
+            if (webElement.getText().equals(tab)){
+                webElement.click();
+                break;
+            }
+        }
     }
 
 
