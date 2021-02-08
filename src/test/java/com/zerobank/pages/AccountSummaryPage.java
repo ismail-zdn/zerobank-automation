@@ -17,10 +17,6 @@ public class AccountSummaryPage extends BasePage{
     @FindBy(css = "[href='/bank/account-activity.html?accountId=1']")
     public WebElement savingsLink;
 
-
-//    @FindBy(how = How.CSS,using = "a[href^='/bank/account-activity.html?accountId=']")
-//    public List<WebElement> webElementLinkList;
-
     @FindBy(css = "a[href^='/bank/account-activity.html?accountId=']")
     public List<WebElement> webElementLinkList;
 

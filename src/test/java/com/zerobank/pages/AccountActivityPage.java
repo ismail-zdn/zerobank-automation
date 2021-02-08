@@ -2,6 +2,7 @@ package com.zerobank.pages;
 
 import com.zerobank.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -33,20 +34,31 @@ public class AccountActivityPage extends BasePage{
     @FindBy(css = "#aa_toDate")
     public WebElement toDateInputBox;
 
+    @FindBy(css = "#aa_description")
+    public WebElement descriptionInputBox;
+
     @FindBy(css = "[class='btn btn-primary']")
     public WebElement findButton;
 
-    @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[1]/tbody//td[1]")
+    @FindBy(css = "[class='well']")
+    public WebElement noResultTextElement;
+
+    @FindBy(css = "#aa_type")
+    public WebElement typeDropDownElement;
+
+    @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[2]/tbody//td[1]")
     public List<WebElement> rowsElementsOfDateColumn;
 
-    @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[1]/tbody//td[2]")
+    @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[2]/tbody//td[2]")
     public List<WebElement> rowsElementsOfDescriptionColumn;
 
-    @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[1]/tbody//td[3]")
+    @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[2]/tbody//td[3]")
     public List<WebElement> rowsElementsOfDepositColumn;
 
-    @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[1]/tbody//td[4]")
+    @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[2]/tbody//td[4]")
     public List<WebElement> rowsElementsOfWithdrawalColumn;
+
+
 
     public Select getSelectDropDown(){
         AccountActivityPage accountActivityPage = new AccountActivityPage();
@@ -64,12 +76,16 @@ public class AccountActivityPage extends BasePage{
     public List<Date> getDateListOfElements(List<WebElement> webElementList) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
         List<Date> dateList = new ArrayList<>();
+//        System.out.println("webElementList.size() = " + webElementList.size());
+//        System.out.println(webElementList);
 
         try {
             for (WebElement webElement : webElementList) {
+//                System.out.println("webElement.getText() = " + webElement.getText());
                 dateList.add(dateFormat.parse(webElement.getText()));
             }
-        }catch (ParseException e){
+        }
+        catch (ParseException e){
             e.printStackTrace();
         }
 
@@ -85,6 +101,21 @@ public class AccountActivityPage extends BasePage{
             e.printStackTrace();
         }
         return date;
+    }
+
+    public List<WebElement> findElementWithHeader(String header){
+        switch (header){
+            case "Date":
+                return rowsElementsOfDateColumn;
+            case "Description":
+                return rowsElementsOfDescriptionColumn;
+            case "Deposit":
+                return rowsElementsOfDepositColumn;
+            case "Withdrawal":
+                return rowsElementsOfWithdrawalColumn;
+            default:
+                return null;
+        }
     }
 
 }
