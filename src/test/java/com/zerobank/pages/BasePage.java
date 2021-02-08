@@ -31,12 +31,16 @@ public abstract class BasePage {
         return accountActivityTab.getText();
     }
 
-    public void accessTab(String tab){
-        for (WebElement webElement : webElementTabList) {
-            if (webElement.getText().equals(tab)){
-                webElement.click();
-                break;
+    public void accessTab(List<WebElement> webElementList,String tabText){
+        try {
+            for (WebElement webElement : webElementList) {
+                if (webElement.getText().equals(tabText)){
+                    webElement.click();
+                    break;
+                }
             }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

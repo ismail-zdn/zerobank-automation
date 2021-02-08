@@ -24,7 +24,8 @@ public class FindTransactionsDefs {
     public void the_user_accesses_the_Find_Transactions_tab() {
         Driver.get().get(ConfigurationReader.get("url"));
         new LoginPage().login();
-        new AccountSummaryPage().accessTab("Account Activity");
+        AccountSummaryPage accountSummaryPage = new AccountSummaryPage();
+        accountSummaryPage.accessTab(accountSummaryPage.webElementTabList,"Account Activity");
         new AccountActivityPage().findTransactionsTab.click();
     }
 
