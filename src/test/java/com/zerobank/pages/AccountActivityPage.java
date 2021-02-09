@@ -60,10 +60,7 @@ public class AccountActivityPage extends BasePage{
 
 
 
-    public Select getSelectDropDown(){
-        AccountActivityPage accountActivityPage = new AccountActivityPage();
-        return new Select(accountActivityPage.accountDropDown);
-    }
+
 
     public List<String> getStringListOfElements(List<WebElement> webElementList){
         List<String> textsList = new ArrayList<>();

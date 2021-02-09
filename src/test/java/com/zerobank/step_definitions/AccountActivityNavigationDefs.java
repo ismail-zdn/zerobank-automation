@@ -40,7 +40,9 @@ public class AccountActivityNavigationDefs {
 
     @Then("Account drop down should have {string} selected")
     public void account_drop_down_should_have_selected(String option) {
-        Assert.assertEquals(option,new AccountActivityPage().getSelectDropDown().getFirstSelectedOption().getText());
+        AccountActivityPage accountActivityPage = new AccountActivityPage();
+        Assert.assertEquals(option,
+                accountActivityPage.getSelectDropDown(accountActivityPage.accountDropDown).getFirstSelectedOption().getText());
     }
 
 

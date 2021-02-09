@@ -83,7 +83,7 @@ public class FindTransactionsDefs {
     public void the_user_enters_description(String description) {
         AccountActivityPage accountActivityPage = new AccountActivityPage();
         accountActivityPage.descriptionInputBox.clear();
-        accountActivityPage.descriptionInputBox.sendKeys(description.toUpperCase());
+        accountActivityPage.descriptionInputBox.sendKeys(description);
     }
 
     @Then("results table should only show descriptions containing {string}")

@@ -34,4 +34,19 @@ public class PayBillsPage extends BasePage{
     @FindBy(css = "[class='alert alert-success hide']")
     public WebElement alertContainer;
 
+    @FindBy(css = "#pc_currency")
+    public WebElement currencyDropDownElement;
+
+    @FindBy(css = "#purchase_cash")
+    public WebElement purchaseButton;
+
+    @FindBy(css = "#pc_amount")
+    public WebElement amountInputBox;
+
+    @FindBy(css = "#pc_inDollars_false")
+    public WebElement selectedCurrencyRadioButton;
+
+    @FindBy(css = "#pc_calculate_costs")
+    public WebElement calculateCostsButton;
+
 }
