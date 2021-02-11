@@ -30,6 +30,9 @@ public class LoginPage extends BasePage{
     @FindBy(css = "[id='proceed-link']")
     public WebElement proceedLinkButton;
 
+    @FindBy(css = "[class='alert alert-error']")
+    public WebElement alertError;
+
 
     public void login() {
         userNameInputBox.sendKeys(ConfigurationReader.get("username"));

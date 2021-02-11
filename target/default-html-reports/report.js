@@ -1,21 +1,24 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/PurchaseForeignCurrency.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/login.feature");
 formatter.feature({
-  "name": "Purchase Foreign Currency",
+  "name": "User should be able to login",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@PurchaseForeignCurrency"
+      "name": "@login"
     }
   ]
 });
 formatter.scenario({
-  "name": "Available currencies",
+  "name": "Only authorized users should be able to login",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@PurchaseForeignCurrency"
+      "name": "@login"
+    },
+    {
+      "name": "@wip"
     }
   ]
 });
@@ -23,38 +26,149 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user is on the \"Purchase Foreign Currency\" tab",
+  "name": "the user is on the login page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.PayeeDefs.the_user_is_on_the_tab(java.lang.String)"
+  "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_is_on_the_login_page()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "following currencies should be available",
+  "name": "the user enters valid credentials",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_enters_valid_credentials()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Account summary page should be displayed",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.LoginStepDefs.account_summary_page_should_be_displayed()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "name": "Users should not be able to login with \u003cuserNameType\u003e username and \u003cpassWordType\u003e password",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@wip"
+    }
+  ]
+});
+formatter.step({
+  "name": "the user is on the login page",
+  "keyword": "Given "
+});
+formatter.step({
+  "name": "the user enters \"\u003cuserNameType\u003e\" \"\u003cuserName\u003e\" username and \"\u003cpassWordType\u003e\" \"\u003cpassWord\u003e\" password",
+  "keyword": "When "
+});
+formatter.step({
+  "name": "The error message \"Login and/or password are wrong.\" should be displayed.",
+  "keyword": "Then "
+});
+formatter.examples({
+  "name": "",
+  "description": "",
+  "keyword": "Examples",
   "rows": [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {}
-  ],
+    {
+      "cells": [
+        "userNameType",
+        "userName",
+        "passWordType",
+        "passWord"
+      ]
+    },
+    {
+      "cells": [
+        "wrong",
+        "wrongUsername",
+        "valid",
+        "password"
+      ]
+    },
+    {
+      "cells": [
+        "valid",
+        "username",
+        "wrong",
+        "wrongPassword"
+      ]
+    },
+    {
+      "cells": [
+        "blank",
+        "",
+        "valid",
+        "password"
+      ]
+    },
+    {
+      "cells": [
+        "valid",
+        "username",
+        "blank",
+        ""
+      ]
+    }
+  ]
+});
+formatter.scenario({
+  "name": "Users should not be able to login with wrong username and valid password",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@login"
+    },
+    {
+      "name": "@wip"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user is on the login page",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_is_on_the_login_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the user enters \"wrong\" \"wrongUsername\" username and \"valid\" \"password\" password",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.LoginStepDefs.the_user_enters_username_and_password(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "The error message \"Login and/or password are wrong.\" should be displayed.",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.PurchaseForeignCurrencyDefs.following_currencies_should_be_available(java.util.List\u003cjava.lang.String\u003e)"
+  "location": "com.zerobank.step_definitions.LoginStepDefs.the_error_message_should_be_displayed(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -63,95 +177,15 @@ formatter.after({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Error message for not selecting currency",
+  "name": "Users should not be able to login with valid username and wrong password",
   "description": "",
-  "keyword": "Scenario",
+  "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@PurchaseForeignCurrency"
-    }
-  ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user is on the \"Purchase Foreign Currency\" tab",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.PayeeDefs.the_user_is_on_the_tab(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user tries to calculate cost without selecting a currency",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.PurchaseForeignCurrencyDefs.user_tries_to_calculate_cost_without_selecting_a_currency()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "error message should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.PurchaseForeignCurrencyDefs.error_message_should_be_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Error message for not entering value",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
+      "name": "@login"
+    },
     {
-      "name": "@PurchaseForeignCurrency"
+      "name": "@wip"
     }
   ]
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user is on the \"Purchase Foreign Currency\" tab",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.PayeeDefs.the_user_is_on_the_tab(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user tries to calculate cost without entering a value",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.PurchaseForeignCurrencyDefs.user_tries_to_calculate_cost_without_entering_a_value()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "error message should be displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.zerobank.step_definitions.PurchaseForeignCurrencyDefs.error_message_should_be_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
 });
