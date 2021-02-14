@@ -1,9 +1,7 @@
 package com.zerobank.pages;
 
-import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
-import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,8 +33,8 @@ public class LoginPage extends BasePage{
 
 
     public void login() {
-        userNameInputBox.sendKeys(ConfigurationReader.get("username"));
-        passwordInputBox.sendKeys(ConfigurationReader.get("password"));
+        userNameInputBox.sendKeys(ConfigurationReader.get("validUsername"));
+        passwordInputBox.sendKeys(ConfigurationReader.get("validPassword"));
         LoginPageSignInButton.click();
         if (Driver.get().findElements(By.cssSelector("[id='details-button']")).size()==1){
             advancedButton.click();

@@ -1,7 +1,6 @@
 package com.zerobank.step_definitions;
 
 import com.zerobank.pages.LoginPage;
-import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -27,13 +26,12 @@ public class LoginStepDefs {
         Assert.assertEquals("Zero - Account Summary",new LoginPage().getPageTitle());
     }
 
-    @When("the user enters {string} {string} username and {string} {string} password")
-    public void the_user_enters_username_and_password(String userNameType, String username, String passWordType, String password) {
+    @When("the user enters {string} and {string}")
+    public void the_user_enters_and(String usernameType, String passwordType) {
         LoginPage loginPage = new LoginPage();
-        loginPage.userNameInputBox.sendKeys(username);
-        loginPage.passwordInputBox.sendKeys(password);
+        loginPage.userNameInputBox.sendKeys(ConfigurationReader.get(usernameType));
+        loginPage.passwordInputBox.sendKeys(ConfigurationReader.get(passwordType));
         loginPage.LoginPageSignInButton.click();
-
     }
 
     @Then("Account summary page should be displayed")
