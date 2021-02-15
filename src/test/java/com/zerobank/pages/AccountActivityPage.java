@@ -46,6 +46,9 @@ public class AccountActivityPage extends BasePage{
     @FindBy(css = "#aa_type")
     public WebElement typeDropDownElement;
 
+    @FindBy(xpath = "//*[@class='table table-condensed table-hover']//th")
+    public List<WebElement> transactionsColumnList;
+
     @FindBy(xpath = "(//*[@class='table table-condensed table-hover'])[2]/tbody//td[1]")
     public List<WebElement> rowsElementsOfDateColumn;
 
