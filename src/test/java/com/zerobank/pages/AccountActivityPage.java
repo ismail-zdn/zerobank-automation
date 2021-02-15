@@ -2,12 +2,8 @@ package com.zerobank.pages;
 
 import com.zerobank.utilities.Driver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -62,33 +58,17 @@ public class AccountActivityPage extends BasePage{
     public List<WebElement> rowsElementsOfWithdrawalColumn;
 
 
-
-
-
-    public List<String> getStringListOfElements(List<WebElement> webElementList){
-        List<String> textsList = new ArrayList<>();
-        for (WebElement webElement : webElementList) {
-            textsList.add(webElement.getText());
-        }
-        return textsList;
-    }
-
     public List<Date> getDateListOfElements(List<WebElement> webElementList) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
         List<Date> dateList = new ArrayList<>();
-//        System.out.println("webElementList.size() = " + webElementList.size());
-//        System.out.println(webElementList);
-
         try {
             for (WebElement webElement : webElementList) {
-//                System.out.println("webElement.getText() = " + webElement.getText());
                 dateList.add(dateFormat.parse(webElement.getText()));
             }
         }
         catch (ParseException e){
             e.printStackTrace();
         }
-
         return dateList;
     }
 
@@ -104,18 +84,12 @@ public class AccountActivityPage extends BasePage{
     }
 
     public List<WebElement> findElementWithHeader(String header){
-        switch (header){
-            case "Date":
-                return rowsElementsOfDateColumn;
-            case "Description":
-                return rowsElementsOfDescriptionColumn;
-            case "Deposit":
-                return rowsElementsOfDepositColumn;
-            case "Withdrawal":
-                return rowsElementsOfWithdrawalColumn;
-            default:
-                return null;
-        }
+        return switch (header) {
+            case "Date" -> rowsElementsOfDateColumn;
+            case "Description" -> rowsElementsOfDescriptionColumn;
+            case "Deposit" -> rowsElementsOfDepositColumn;
+            case "Withdrawal" -> rowsElementsOfWithdrawalColumn;
+            default -> null;
+        };
     }
-
 }

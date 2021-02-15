@@ -38,7 +38,7 @@ public class AccountActivityNavigationDefs {
 
     @Then("the Account Activity page should be displayed")
     public void the_Account_Activity_page_should_be_displayed() {
-        Assert.assertEquals("Account Activity",new AccountActivityPage().getPageTabText());
+        Assert.assertEquals("Zero - Account Activity",Driver.get().getTitle());
     }
 
     @Then("Account drop down should have {string} selected")
@@ -69,6 +69,4 @@ public class AccountActivityNavigationDefs {
                 BrowserUtils.getElementsText(accountActivityPage.transactionsColumnList);
         Assert.assertEquals(expectedTransactionsColumns,actualTransActionsColumns);
     }
-
-
 }

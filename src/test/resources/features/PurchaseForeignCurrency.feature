@@ -1,6 +1,5 @@
-@PurchaseForeignCurrency
+@PurchaseForeignCurrency @V1.0
 Feature: Purchase Foreign Currency
-
 
   Scenario: Available currencies
     Given the user is on the "Purchase Foreign Currency" tab

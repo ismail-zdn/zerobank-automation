@@ -1,4 +1,4 @@
-@login
+@login @V1.0
 Feature: User should be able to login
 
   Scenario: login as a user
@@ -16,7 +16,6 @@ Feature: User should be able to login
     When the user enters "<userNameType>" and "<passWordType>"
     Then The error message "Login and/or password are wrong." should be displayed.
     Examples:
-
       | userNameType  | passWordType  |
       | wrongUsername | validPassword |
       | validUsername | wrongPassword |

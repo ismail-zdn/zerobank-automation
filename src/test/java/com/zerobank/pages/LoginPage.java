@@ -31,7 +31,6 @@ public class LoginPage extends BasePage{
     @FindBy(css = "[class='alert alert-error']")
     public WebElement alertError;
 
-
     public void login() {
         userNameInputBox.sendKeys(ConfigurationReader.get("validUsername"));
         passwordInputBox.sendKeys(ConfigurationReader.get("validPassword"));

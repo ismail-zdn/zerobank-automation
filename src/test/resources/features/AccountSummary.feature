@@ -1,4 +1,4 @@
-@AccountSummary
+@AccountSummary @V1.0
 Feature: Account Summary Page should have following account types and columns
 
   Background:

@@ -49,4 +49,31 @@ public class PayBillsPage extends BasePage{
     @FindBy(css = "#pc_calculate_costs")
     public WebElement calculateCostsButton;
 
+    @FindBy(css = "#sp_payee")
+    public WebElement payeeDropDownElement;
+
+    @FindBy(css = "#sp_account")
+    public WebElement accountDropDownElement;
+
+    @FindBy(css = "#sp_amount")
+    public WebElement payeeAmountInputBox;
+
+    @FindBy(css = "#sp_date")
+    public WebElement dateInputBox;
+
+    @FindBy(css = "#sp_description")
+    public WebElement descriptionInputBox;
+
+    @FindBy(css = "#pay_saved_payees")
+    public WebElement payButton;
+
+
+
+
+
+
+
+
+
+
 }

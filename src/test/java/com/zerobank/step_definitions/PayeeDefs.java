@@ -9,8 +9,10 @@ import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.List;
 import java.util.Map;
 
 public class PayeeDefs {
@@ -32,14 +34,25 @@ public class PayeeDefs {
         payBillsPage.payeeAddressInputBox.sendKeys(newPayeeInfo.get("Payee Address"));
         payBillsPage.payeeAccountInputBox.sendKeys(newPayeeInfo.get("Account"));
         payBillsPage.payeeDetailsInputBox.sendKeys(newPayeeInfo.get("Payee details"));
+        payBillsPage.addButton.click();
     }
 
     @Then("message {string} should be displayed")
     public void message_should_be_displayed(String message) {
         PayBillsPage payBillsPage = new PayBillsPage();
-        payBillsPage.addButton.click();
         BrowserUtils.waitForVisibility(payBillsPage.alertContainer,3);
         Assert.assertEquals(message,payBillsPage.alertContainer.getText().substring(2));
+    }
+
+    @When("the user enter following information for a successful pay operation")
+    public void the_user_enter_following_information_for_a_successful_pay_operation(List<String> data) {
+       PayBillsPage payBillsPage = new PayBillsPage();
+       payBillsPage.getSelectDropDown(payBillsPage.payeeDropDownElement).selectByVisibleText(data.get(0));
+       payBillsPage.getSelectDropDown(payBillsPage.accountDropDownElement).selectByVisibleText(data.get(1));
+       payBillsPage.payeeAmountInputBox.sendKeys(data.get(2));
+       payBillsPage.dateInputBox.sendKeys(data.get(3));
+       payBillsPage.descriptionInputBox.sendKeys(data.get(4));
+       payBillsPage.payButton.click();
     }
 }
 

@@ -16,22 +16,8 @@ public abstract class BasePage {
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy(xpath = "(//*[@data-toggle='dropdown'])[2]")
-    public WebElement userName;
-
-    @FindBy(css = "[id='account_activity_tab']")
-    public WebElement accountActivityTab;
-
     @FindBy(css = "a[href^='/bank/redirect.html?url']")
     public List<WebElement> webElementTabList;
-
-    public String getPageTitle(){
-        return Driver.get().getTitle();
-    }
-
-    public String getPageTabText(){
-        return accountActivityTab.getText();
-    }
 
     public void accessTab(List<WebElement> webElementList,String tabText){
         try {
@@ -50,8 +36,6 @@ public abstract class BasePage {
         return new Select(dropDownElement);
     }
 
-
-
     public boolean isAlertPresent()
     {
         try
@@ -64,10 +48,6 @@ public abstract class BasePage {
             return false;
         }
     }
-
-
-
-
 
 }
 

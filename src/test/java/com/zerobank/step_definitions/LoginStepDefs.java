@@ -23,7 +23,7 @@ public class LoginStepDefs {
 
     @Then("the user should be able to login")
     public void the_user_should_be_able_to_login() {
-        Assert.assertEquals("Zero - Account Summary",new LoginPage().getPageTitle());
+        Assert.assertEquals("Zero - Account Summary",Driver.get().getTitle());
     }
 
     @When("the user enters {string} and {string}")

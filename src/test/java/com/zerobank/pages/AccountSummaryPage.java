@@ -14,9 +14,6 @@ public class AccountSummaryPage extends BasePage{
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy(css = "[href='/bank/account-activity.html?accountId=1']")
-    public WebElement savingsLink;
-
     @FindBy(css = "a[href^='/bank/account-activity.html?accountId=']")
     public List<WebElement> webElementLinkList;
 
