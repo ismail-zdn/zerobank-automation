@@ -20,6 +20,12 @@ public class AccountSummaryPage extends BasePage{
     @FindBy(css = "a[href^='/bank/account-activity.html?accountId=']")
     public List<WebElement> webElementLinkList;
 
+    @FindBy(css = "[class='board-header']")
+    public List<WebElement> accountTypesList;
+
+    @FindBy(xpath = "(//*[@class='table'])[3]//th")
+    public List<WebElement> creditAccountsColumnsList;
+
 
 
 
